@@ -1,2 +1,24 @@
-<h1>Ideas#index</h1>
-<p>Find me in app/views/ideas/index.html.erb</p>
+<h1 class="text-center">Welcome to Ideabox!</h1>
+
+<h2 class="text-center">Existing Ideas</h2>
+<div class="center jumbotron">
+  <div class="text-center" id="ideas"></div>
+</div>
+
+
+<div class="text-center" id="create-idea">
+  <h2>Create new Idea</h2>
+  <div class="center jumbotron">
+    <form>
+      <div class="form-group">
+        <label for="title">Idea Title</label>
+        <input type="title" class="form-control" id="title-field" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <label for="body">Idea Body</label>
+        <input type="body" class="form-control" id="body-field" placeholder="Body">
+      </div>
+      <button type="submit" class="btn btn-info" id="submit-idea">Save</button>
+    </form>
+  </div>
+</div>
