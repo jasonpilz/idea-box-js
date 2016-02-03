@@ -3,10 +3,9 @@ form {
   width: 50%
 }
 
-span.glyphicon {
-  font-size: 25px;
-  margin: 3px;
-  color: blue;
+.search-field {
+  margin: 0 auto;
+  width: 50%
 }
 
 .well {
