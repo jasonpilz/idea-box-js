@@ -19,10 +19,10 @@ var chronoSortIdeas = (data) => {
 
 var renderIdea = (idea) => {
     $('#ideas').append(
-        `<div id='idea'>`
-        + `<h3 contenteditable='true' class='well idea-title' id='title' idea-id='${idea.id}' tile=${idea.title}>`
+        `<div id='idea' idea-id='${idea.id}'>`
+        + `<h3 contenteditable='true' class='well idea-title' id='title' idea-id='${idea.id}'>`
         + `${idea.title}`
-        + `</h3><p contenteditable='true' class='well' id='body' idea-id=${idea.id} >`
+        + `</h3><p contenteditable='true' class='well' id='body' idea-id='${idea.id}'>`
         + `${truncate(idea.body)}`
         + `</p>`
         + `<p class='well'>`
