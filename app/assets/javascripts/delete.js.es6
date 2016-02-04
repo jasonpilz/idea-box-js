@@ -10,12 +10,8 @@ var deleteIdea = () => {
         $.ajax({
             type: 'DELETE',
             url: '/api/v1/ideas/' + $idea.attr('idea-id'),
-            success: () => {
-                $idea.parent().remove();
-            },
-            error: (xhr) => {
-                alert(xhr.responseTest)
-            }
+            success: () => { $idea.parent().remove() },
+            error: (xhr) => { alert(xhr.responseTest) }
         })
     })
 }

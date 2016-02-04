@@ -9,12 +9,8 @@ var fetchIdeas = () => {
 }
 
 var chronoSortIdeas = (data) => {
-    data.sort((a, b) => {
-        return b.id - a.id
-    })
-    .forEach((idea) => {
-        renderIdea(idea)
-    })
+    data.sort((a, b) => { return b.id - a.id })
+    .forEach((idea) => { renderIdea(idea) })
 }
 
 var renderIdea = (idea) => {
@@ -29,7 +25,9 @@ var renderIdea = (idea) => {
         + `Quality: ${idea.quality}`
         + `</p>`
         + `<br>`
+        + `<button type="button" class="btn btn-success" id="increase-quality" idea-id=${idea.id} quality-value=${idea.quality}>Increase</button>`
         + `<button type="button" class="btn btn-danger" id="delete-idea" idea-id=${idea.id}>Delete</button>`
+        + `<button type="button" class="btn btn-warning" id="decrease-quality" idea-id=${idea.id} quality-value=${idea.quality}>Decrease</button>`
         + `<hr>`
         + `</div>`
     )

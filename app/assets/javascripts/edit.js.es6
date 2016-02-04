@@ -16,9 +16,7 @@ var updateTitle = () => {
                 url: '/api/v1/ideas/' + $ideaID,
                 data: data,
                 success: function() {},
-                error: (xhr) => {
-                    alert(xhr.responseText);
-                }
+                error: (xhr) => { alert(xhr.responseText) }
             })
         }
     })
@@ -37,9 +35,7 @@ var updateBody = () => {
                 url: '/api/v1/ideas/' + $ideaID,
                 data: data,
                 success: function() {},
-                error: (xhr) => {
-                    alert(xhr.responseText);
-                }
+                error: (xhr) => { alert(xhr.responseText) }
             })
         }
     })
