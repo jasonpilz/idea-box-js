@@ -14,14 +14,14 @@ var upgradeQuality = () => {
         $.ajax({
             type: 'PATCH',
             url: "/api/v1/ideas/" + ideaID,
-            data: { quality: newQuality(currentQuality) },
+            data: { quality: increaseQuality(currentQuality) },
             success: () => { clearIdeas(); fetchIdeas() },
             error: (xhr) => { alert(xhr.responseText) }
         });
     });
 };
 
-var newQuality = (currentQuality) => {
+var increaseQuality = (currentQuality) => {
     let currentIndex = qualities.indexOf(currentQuality);
     if (currentIndex == 2) {
         alert("Cannot increase further!")
