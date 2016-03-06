@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
 $(() => {
     upgradeQuality();
-})
+});
 
-var qualities = ["Swill", "Plausible", "Genius"];
+let qualities = ["Swill", "Plausible", "Genius"];
 
-var upgradeQuality = () => {
+let upgradeQuality = () => {
     $('#ideas').delegate('#increase-quality', 'click', (event) => {
         //event.preventDefault();
         let $idea = $(event.toElement);
@@ -16,17 +16,17 @@ var upgradeQuality = () => {
             type: 'PATCH',
             url: "/api/v1/ideas/" + ideaID,
             data: { quality: increaseQuality(currentQuality) },
-            success: () => { clearIdeas(); fetchIdeas() },
-            error: (xhr) => { alert(xhr.responseText) }
+            success: () => { clearIdeas(); fetchIdeas(); },
+            error: (xhr) => { alert(xhr.responseText); }
         });
     });
 };
 
-var increaseQuality = (currentQuality) => {
+let increaseQuality = (currentQuality) => {
     let currentIndex = qualities.indexOf(currentQuality);
     if (currentIndex == 2) {
-        alert("Cannot increase further!")
+        alert("Cannot increase further!");
     } else {
         return qualities[currentIndex + 1];
     }
-}
+};

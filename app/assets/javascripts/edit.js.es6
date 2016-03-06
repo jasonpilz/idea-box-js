@@ -1,13 +1,15 @@
-$(() => {
-    updateTitle()
-    updateBody()
-})
+'use strict';
 
-var updateTitle = () => {
+$(() => {
+    updateTitle();
+    updateBody();
+});
+
+let updateTitle = () => {
     $('#ideas').delegate('#title', 'keydown', function(event) {
         if (event.which == 13) {
-            var $ideaID = this.attributes[3].nodeValue
-            var data = { title: this.textContent };
+            let $ideaID = this.attributes[3].nodeValue;
+            let data = { title: this.textContent };
             event.preventDefault();
             this.blur();
 
@@ -15,18 +17,18 @@ var updateTitle = () => {
                 type: "PUT",
                 url: '/api/v1/ideas/' + $ideaID,
                 data: data,
-                success: function() {},
-                error: (xhr) => { alert(xhr.responseText) }
-            })
+                success: () => {},
+                error: (xhr) => { alert(xhr.responseText); }
+            });
         }
-    })
-}
+    });
+};
 
-var updateBody = () => {
+let updateBody = () => {
     $('#ideas').delegate('#body', 'keydown', function(event) {
         if (event.which == 13) {
-            var $ideaID = this.attributes[3].nodeValue
-            var data = { body: this.textContent };
+            let $ideaID = this.attributes[3].nodeValue;
+            let data = { body: this.textContent };
             event.preventDefault();
             this.blur();
 
@@ -34,10 +36,9 @@ var updateBody = () => {
                 type: "PUT",
                 url: '/api/v1/ideas/' + $ideaID,
                 data: data,
-                success: function() {},
-                error: (xhr) => { alert(xhr.responseText) }
-            })
+                success: () => {},
+                error: (xhr) => { alert(xhr.responseText); }
+            });
         }
-    })
-}
-
+    });
+};
