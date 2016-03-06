@@ -8,6 +8,7 @@ var qualities = ["Swill", "Plausible", "Genius"];
 
 var upgradeQuality = () => {
     $('#ideas').delegate('#increase-quality', 'click', (event) => {
+        //event.preventDefault();
         let $idea = $(event.toElement);
         let ideaID = $idea.attr('idea-id');
         let currentQuality = $idea.attr('quality-value');
